@@ -11,10 +11,15 @@ Este proyecto es un keylogger básico en C diseñado para ejecutarse en Termux (
 📌 Características
 
 ✅ Captura teclas sin necesidad de presionar Enter.
+
 ✅ Guarda las teclas en un archivo de log (log.txt).
+
 ✅ Cifra los datos usando XOR (0xAA) para evitar lectura directa.
+
 ✅ Corre en segundo plano usando nohup y disown.
+
 ✅ Descifrado de datos con un programa en C.
+
 ✅ Filtra caracteres no imprimibles para evitar datos corruptos.
 
 
