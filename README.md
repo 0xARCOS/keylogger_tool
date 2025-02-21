@@ -2,33 +2,33 @@
 
 Captura de teclas con cifrado XOR y ejecución en segundo plano
 
-Este proyecto es un keylogger básico en C diseñado para ejecutarse en Termux (Android/Linux). Captura pulsaciones de teclas en tiempo real y las almacena en un archivo cifrado con XOR para evitar detección fácil. Además, puede ejecutarse en segundo plano sin interferir con otras aplicaciones.
-📌 Características
+Este proyecto es un keylogger básico en C diseñado para ejecutarse en Termux (Android/Linux). Captura pulsaciones de teclas en tiempo real y las almacena en un archivo cifrado con XOR para evitar detección.
 
-✅ Captura teclas sin necesidad de presionar Enter.
-✅ Guarda las teclas en un archivo de log (log.txt).
-✅ Cifra los datos usando XOR (0xAA) para evitar lectura directa.
-✅ Corre en segundo plano usando nohup y disown.
-✅ Descifrado de datos con un programa en C.
-✅ Filtra caracteres no imprimibles para evitar datos corruptos.
+## 📌 Características
+
+- ✅ Captura teclas sin necesidad de presionar Enter.
+- ✅ Guarda las teclas en un archivo de log (`log.txt`).
+- ✅ Cifra los datos usando XOR (0xAA) para evitar lectura directa.
+- ✅ Corre en segundo plano usando `nohup` y `disown`.
+- ✅ Descifrado de datos con un programa en C.
+- ✅ Filtra caracteres no imprimibles para evitar datos corruptos.
+
 ## 📁 Estructura del Proyecto
 
+```plaintext
 📂 Keylogger
-
  ├── keylogger.c   # Captura y cifra teclas
- 
  ├── decrypt.c     # Descifra el archivo log.txt
- 
  ├── README.md     # Documentación del proyecto
- 
  └── log.txt       # Archivo donde se guardan las teclas capturadas
+```
 
 ## 🔧 Instalación y Uso
 
 ### 1️⃣ Clonar el repositorio
 
-git clone https://github.com/V1nt3r4/keylogger_tool.git
-cd keylogger_tool
+    git clone https://github.com/V1nt3r4/keylogger_tool.git
+    cd keylogger_tool
 
 ### 2️⃣ Compilar el keylogger
 
