@@ -65,6 +65,7 @@ clang decrypt.c -o decrypt
 
 🔹 1️⃣ Captura de teclas (get_key())
 
+```
 char get_key() {
     struct termios oldt, newt;
     char ch;
@@ -75,7 +76,7 @@ char get_key() {
     ch = getchar();
     tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
     return ch;
-}
+} ```
 
 📌 Lógica:
 
