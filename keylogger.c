@@ -1,4 +1,28 @@
-#include <stdio.h>                                                          #include <stdlib.h>                                                         #include <termios.h>                                                        #include <unistd.h>                                                         #include <signal.h>                                                         #include <ctype.h>  // Para verificar si un carácter es imprimible                                                                                      #define LOG_FILE "log.txt"                                                  #define XOR_KEY 0xAA  // Clave para cifrado simple                                                                                                      FILE *file; // Puntero al archivo global                                                                                                                /**                                                                          * Captura una tecla sin necesidad de presionar Enter.                       */                                                                         char get_key() {                                                                struct termios oldt, newt;                                                  char ch;                                                                                                                                                // Guardar configuración actual del terminal                                tcgetattr(STDIN_FILENO, &oldt);                                             newt = oldt;                                                                                                                                            // Desactivar buffer de línea y eco                                         newt.c_lflag &= ~(ICANON | ECHO);
+#include <stdio.h>
+#include <stdlib.h>
+#include <termios.h>
+#include <unistd.h>
+#include <signal.h>
+#include <ctype.h>  // Para verificar si un carácter es imprimible
+
+#define LOG_FILE "log.txt"
+#define XOR_KEY 0xAA  // Clave para cifrado simple
+
+FILE *file; // Puntero al archivo global
+
+/**
+ * Captura una tecla sin necesidad de presionar Enter.
+ */
+char get_key() {
+    struct termios oldt, newt;
+    char ch;
+
+    // Guardar configuración actual del terminal
+    tcgetattr(STDIN_FILENO, &oldt);
+    newt = oldt;
+
+    // Desactivar buffer de línea y eco
+    newt.c_lflag &= ~(ICANON | ECHO);
     tcsetattr(STDIN_FILENO, TCSANOW, &newt);
 
     // Capturar una tecla
