@@ -25,22 +25,11 @@ Este proyecto es un keylogger básico en C diseñado para ejecutarse en Termux (
 
 ---
 
-📁 Estructura del Proyecto
-
-📂 Keylogger
- ├── keylogger.c   # Captura y cifra teclas
- ├── decrypt.c     # Descifra el archivo log.txt
- ├── README.md     # Documentación del proyecto
- └── log.txt       # Archivo donde se guardan las teclas capturadas
-
-
----
-
 🔧 Instalación y Uso
 
 1️⃣ Clonar el repositorio
 
-git clone https://github.com/tu-usuario/keylogger_tool.git
+git clone https://github.com/V1nt3r4/keylogger_tool.git
 cd keylogger_tool
 
 2️⃣ Compilar el keylogger
