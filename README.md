@@ -119,40 +119,6 @@ Este proyecto es un keylogger básico en C diseñado para ejecutarse en Termux (
     Aplica XOR inverso (^ 0xAA) para recuperar las teclas originales.
     Muestra el resultado en pantalla.
 
-## ⚠️ Advertencia y Mal Uso Potencial
-
-### Uso Malicioso:
-
-- **Captura de datos sensibles**: En manos de actores maliciosos, el keylogger podría utilizarse para capturar contraseñas, datos bancarios o información personal.
--  **Espionaje**: Un atacante podría monitorear las pulsaciones de teclas de un usuario para espiar conversaciones, correos electrónicos o mensajes privados.
-- **Robo de identidad**: La información recopilada podría ser utilizada para suplantar la identidad del usuario y acceder a cuentas personales o corporativas.
-- **Exfiltración de datos**: Combinado con técnicas de red, el keylogger puede enviar datos a un servidor remoto sin que el usuario lo note.
-
-## 💻 Aplicaciones en Ciberseguridad
-### 🔹 1️⃣ Seguridad Ofensiva (Pentesting)
-
-- Se usa para testear seguridad en sistemas Linux.
-- Puede demostrar fallos en la protección de terminales.
-- Puede probar la efectividad de antivirus y herramientas de detección.
-
-### 🔹 2️⃣ Seguridad Defensiva
-
-- Ayuda a detectar comportamiento sospechoso en procesos.
-- Puede ser usado para analizar técnicas de malware y crear contramedidas.
-- Demuestra la importancia de proteger stdin en Linux.
-
-### 🔹 3️⃣ Educación y Entrenamiento
-
--  Permite entender cómo funciona la captura de eventos de teclado en Linux.
-- Introduce el concepto de cifrado XOR en aplicaciones de seguridad.
-    Enseña cómo ocultar procesos en sistemas basados en Unix.
-
-### ⚠️ Advertencia Legal
-
-Este keylogger fue desarrollado con fines educativos y de auditoría en ciberseguridad.
-El uso de este software en sistemas sin permiso es ilegal y puede tener consecuencias penales.
-
-Úsalo bajo tu propia responsabilidad y solo en entornos controlados.
 
 ## 🎯 Mejoras Futuras
 
